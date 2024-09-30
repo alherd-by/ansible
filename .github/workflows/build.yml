@@ -22,7 +22,6 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
 
       - name: 'Build Inventory Image'
-        working-directory: infrastructure
         run: |
           docker build -f Dockerfile . --tag ghcr.io/${{github.actor}}/ansible:latest
           docker push ghcr.io/${{github.actor}}/ansible:latest
